@@ -92,4 +92,4 @@ func (j json) Parse(str string) js.Value {
 	return js.Global().Get("JSON").Call("parse", str)
 }
 
-var _JSON = json{}
+var JSON = json{}
