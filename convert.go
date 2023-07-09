@@ -80,3 +80,16 @@ func convertGoMapToJSObject(m map[string]interface{}) js.Value {
 	}
 	return obj
 }
+
+type json struct {
+}
+
+func (j json) Stringify(v js.Value) string {
+	return js.Global().Get("JSON").Call("stringify", v)
+}
+
+func (j json) Parse(str string) js.Value {
+	return js.Global().Get("JSON").Call("parse", str)
+}
+
+var _JSON = json{}
