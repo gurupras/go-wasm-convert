@@ -85,7 +85,7 @@ type json struct {
 }
 
 func (j json) Stringify(v js.Value) string {
-	return js.Global().Get("JSON").Call("stringify", v)
+	return js.Global().Get("JSON").Call("stringify", v).String()
 }
 
 func (j json) Parse(str string) js.Value {
